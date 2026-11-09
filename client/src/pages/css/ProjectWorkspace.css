@@ -1,0 +1,524 @@
+.project-page {
+  padding: 1rem 1.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: calc(100vh - 64px);
+}
+
+/* Loading / error / not-found */
+.project-loading,
+.project-not-found {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.project-error {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background-color: #ffe5e5;
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+/* Header */
+.project-header {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.project-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.project-back-btn {
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.project-back-btn:hover {
+  color: #374151;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+.project-description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* Header right: total + report button inline */
+.project-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: right;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.project-total-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9ca3af;
+}
+
+.project-total-value {
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+
+/* Generate report button */
+.project-generate-report-btn {
+  border: 1px solid #d1d5db;
+  background-color: #3a4750;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.project-generate-report-btn:hover {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+  color: #000000;
+}
+
+/* Layout */
+.project-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+/* Sidebar */
+.project-sidebar {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  padding: 0.9rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 160px);
+  max-height: 700px;
+}
+
+.project-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.project-sidebar-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.project-add-module-btn {
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background-color: #3a4750;
+  color: #f5f7f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.project-add-module-btn:hover {
+  background-color: #6c7a89;
+}
+
+.project-module-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+/* Module items */
+.project-module-item {
+  width: 100%;
+  text-align: left;
+  border-radius: 10px;
+  border: none;
+  padding: 0.55rem 0.55rem;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.project-module-item:hover {
+  background-color: #f3f4f6;
+}
+
+.project-module-item-active {
+  background-color: #e5e7eb;
+}
+
+.project-module-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.1rem;
+}
+
+.project-module-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+/* Main area */
+.project-main {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  padding: 1rem 1.1rem;
+  min-height: 300px;
+}
+
+.project-main-empty {
+  height: 100%;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* ===============================
+   PROJECT REPORT MODAL
+================================ */
+
+.project-report-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.project-report-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3);
+}
+
+.project-report-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.project-report-modal-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.project-report-close-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.project-report-close-btn:hover {
+  color: #111827;
+}
+
+.project-report-modal-body {
+  padding: 1rem 1.25rem;
+  overflow-y: auto;
+}
+
+/* Report table */
+.project-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.project-report-table th,
+.project-report-table td {
+  text-align: center;
+  padding: 0.6rem 0.5rem;
+}
+
+.project-report-table th {
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.project-report-table td {
+  border-bottom: 1px solid #f3f4f6;
+  color: #111827;
+}
+
+.project-report-total-row td {
+  font-weight: 700;
+  border-top: 2px solid #111827;
+  padding-top: 0.75rem;
+}
+
+/* Modal footer */
+.project-report-modal-footer {
+  padding: 0.9rem 1.25rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
+}
+
+.project-download-excel-btn {
+  background-color: #111827;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.project-download-excel-btn:hover {
+  background-color: #1f2937;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .project-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-sidebar {
+    height: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-page {
+    padding-inline: 1rem;
+  }
+
+  .project-header-right {
+    text-align: left;
+  }
+
+  .project-report-modal {
+    margin: 0 1rem;
+  }
+}
+
+/* ============================================
+   ADD MODULE MODAL (RESTORED – DO NOT TOUCH)
+   ============================================ */
+
+.project-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.project-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.4rem 1.6rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.3);
+}
+
+.project-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.project-modal-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.project-modal-close {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.project-modal-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.9rem;
+}
+
+.project-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.project-modal-option {
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  padding: 0.7rem 0.8rem;
+  cursor: pointer;
+  background-color: #ffffff;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+  transition: background-color 0.15s ease,
+              border-color 0.15s ease,
+              box-shadow 0.15s ease,
+              transform 0.1s ease;
+}
+
+.project-modal-option:hover {
+  background-color: #f9fafb;
+  border-color: #a8c5da;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+
+.project-modal-option-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  color: #111827;
+}
+
+.project-modal-option-text {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.project-modal-footer-text {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* ============================================
+   PROJECT DELETE ICON (SUBTLE, ICON-ONLY)
+   ============================================ */
+
+.project-delete-icon-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #9ca3af;
+  background-color: #3a4750;
+  padding: 0.25rem;
+  border-radius: 6px;
+  line-height: 1;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+/* Hover = danger intent */
+.project-delete-icon-btn:hover {
+  color: #dc2626;
+  background-color: #fee2e2;
+}
+
+/* Keep spacing consistent inside header */
+.project-header-right .project-delete-icon-btn {
+  margin-left: 0.25rem;
+}
+
+/* ================================
+   Delete Project Modal tweaks
+================================ */
+
+/* Smaller width for delete modal */
+.project-delete-modal {
+  max-width: 420px;
+}
+
+/* Body text spacing */
+.project-delete-text {
+  margin-bottom: 1rem;
+}
+
+/* Red warning text */
+.project-delete-warning {
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+/* Footer layout override for delete modal */
+.project-delete-footer {
+  justify-content: flex-end;
+  gap: 0.75rem;   /* ✅ spacing between Cancel & Delete */
+}
+
+/* Cancel button */
+.project-cancel-btn {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+/* Delete button (danger) */
+.project-delete-btn {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.project-delete-btn:hover {
+  background-color: #b91c1c;
+}

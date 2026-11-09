@@ -1,0 +1,320 @@
+/* =========================
+   PROFILE PAGE
+========================= */
+
+.profile-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  min-height: calc(100vh - 64px);
+}
+
+.profile-loading {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.profile-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #3a4750;
+}
+
+.profile-error {
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background-color: #ffe5e5;
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.profile-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background-color: #3a4750;
+  color: #f5f7f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.profile-email {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* =========================
+   PROFILE – ORGANIZATION
+========================= */
+
+.profile-org {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-top: 0.2rem;
+}
+
+
+/* =========================
+   PROFILE – STANDARD PRICES
+========================= */
+
+.profile-prices {
+  margin-top: 2rem;
+}
+
+.profile-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3a4750;
+  margin-bottom: 0.75rem;
+}
+
+.profile-prices-table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+.profile-prices-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.profile-prices-table th,
+.profile-prices-table td {
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.profile-prices-table th {
+  background: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.profile-prices-table tr:last-child td {
+  border-bottom: none;
+}
+
+.profile-prices-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.profile-edit-cell {
+  position: relative;
+  z-index: 2;
+}
+
+.profile-edit-icon {
+  cursor: pointer;
+  pointer-events: auto;
+  display: inline-block;
+}
+
+.profile-edit-icon {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* =========================
+   PROFILE – EDIT MODAL POPUP
+========================= */
+
+.profile-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.profile-modal {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  width: 90%;
+  max-width: 640px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+}
+
+.profile-modal h3 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.profile-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 1rem;
+}
+
+.profile-modal-row {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.profile-modal-row label {
+  margin-bottom: 0.2rem;
+}
+
+.profile-modal-row input {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.profile-modal-row input:disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.profile-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.profile-modal-cancel,
+.profile-modal-save {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: none;
+}
+
+.profile-modal-cancel {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.profile-modal-save {
+  background: #3a4750;
+  color: #ffffff;
+}
+
+/* =========================
+   PROFILE – COMPACT EDIT MODAL
+========================= */
+
+.profile-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  width: 85%;
+  max-width: 520px;   /* ⬅ smaller than before */
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.22);
+}
+
+.profile-modal h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;   /* ⬅ smaller title */
+  color: #111827;
+}
+
+.profile-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 0.75rem; /* ⬅ tighter gaps */
+}
+
+.profile-modal-row {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem; /* ⬅ smaller labels */
+  color: #374151;
+}
+
+.profile-modal-row label {
+  margin-bottom: 0.15rem;
+}
+
+.profile-modal-row input {
+  padding: 0.3rem 0.45rem;  /* ⬅ smaller inputs */
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.75rem;      /* ⬅ smaller text */
+  height: 28px;
+}
+
+.profile-modal-row input:disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.profile-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.profile-modal-cancel,
+.profile-modal-save {
+  padding: 0.3rem 0.75rem;  /* ⬅ smaller buttons */
+  border-radius: 999px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: none;
+}
+
+.profile-modal-cancel {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.profile-modal-save {
+  background: #3a4750;
+  color: #ffffff;
+}

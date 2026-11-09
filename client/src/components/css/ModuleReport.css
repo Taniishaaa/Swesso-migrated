@@ -1,0 +1,110 @@
+/* ===============================
+   MODULE REPORT
+   =============================== */
+
+.module-report-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.module-report-title {
+  margin: 1rem 0 0.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ===============================
+   TABLE
+   =============================== */
+
+.module-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.module-report-table th,
+.module-report-table td {
+  border: 1px solid #e0e0e0;
+  padding: 6px 8px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Header */
+.module-report-table thead th {
+  background: #e8f1fa;
+  font-weight: 600;
+}
+
+/* First column (component name) */
+.component-col {
+  background: #e8f1fa;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* Summary key column */
+.summary-key {
+  background: #e8f1fa;
+  text-align: left;
+  width: 40%;
+}
+
+/* ===============================
+   TOTALS
+   =============================== */
+
+.totals-separator td {
+  border: none;
+  height: 8px;
+}
+
+.totals-row td {
+  font-weight: 500;
+}
+
+.grand-total-row td {
+  font-weight: 700;
+  border-top: 2px solid #333;
+}
+
+/* IMPORTANT: no blue background on last rows */
+.totals-row td,
+.grand-total-row td {
+  background: #ffffff;
+}
+
+.totals-row td:first-child,
+.grand-total-row td:first-child {
+  background: #e8f1fa;   /* same blue as components */
+  font-weight: 600;
+  text-align: left;
+}
+
+/* ===============================
+   EXCEL BUTTON
+   =============================== */
+
+.module-report-toolbar {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.module-report-excel-btn {
+  background: #cfe3f4;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.module-report-excel-btn:hover {
+  background: #b7d4ee;
+}

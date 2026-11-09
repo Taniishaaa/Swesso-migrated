@@ -1,0 +1,157 @@
+/* Page wrapper */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f7f9; /* Background */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+}
+
+/* Container box */
+.auth-container {
+  width: 100%;
+  max-width: 400px; /* desktop stays same */
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Branding */
+.brand-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #3a4750;
+  margin-bottom: 0.5rem;
+}
+
+.login-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e1e1e;
+  margin-bottom: 1.5rem;
+}
+
+/* Error box */
+.auth-error {
+  background-color: #ffe5e5;
+  color: #c62828;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ffb8b8;
+}
+
+/* Form styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #3a4750;
+  font-weight: 500;
+}
+
+input {
+  padding: 0.75rem;
+  border: 1px solid #6c7a89;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #a8c5da;
+  box-shadow: 0 0 5px rgba(168, 197, 218, 0.6);
+}
+
+/* Button */
+.login-btn {
+  background-color: #3a4750;
+  color: #f5f7f9;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #6c7a89;
+}
+
+/* Sign up link */
+.signup-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #1e1e1e;
+  text-align: center;
+}
+
+.signup-text a {
+  color: #3a4750;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- TABLETS (iPad / iPad Pro) ---------- */
+@media screen and (max-width: 1100px) {
+  .auth-page {
+    align-items: flex-start;   /* stop vertical centering */
+    padding-top: 6rem;        /* push form near top */
+  }
+
+  .auth-page .auth-container {
+    max-width: 600px !important;
+    padding: 2.4rem;
+  }
+
+  .auth-page .brand-title {
+    font-size: 2rem;
+  }
+
+  .auth-page .login-heading {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* ---------- PHONES ---------- */
+@media (max-width: 480px) {
+  .auth-page {
+    align-items: flex-start; /* move card up */
+    padding-top: 3.5rem;
+  }
+
+  .auth-container {
+    padding: 1.5rem;
+  }
+
+  .brand-title {
+    font-size: 1.5rem;
+  }
+
+  .login-heading {
+    font-size: 1.2rem;
+  }
+}

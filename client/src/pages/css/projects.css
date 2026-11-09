@@ -1,0 +1,145 @@
+/* =========================
+   PROJECTS PAGE
+========================= */
+
+.projects-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header */
+.projects-header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+  align-items: center;
+}
+
+.projects-search {
+  width: 100%;
+  min-width: 0;
+  height: 36px;
+  padding: 0 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+}
+
+.projects-sort {
+  height: 36px;
+  width: 180px;
+  padding: 0 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.8rem;
+  background: #fff;
+}
+
+.projects-add-button {
+  height: 36px;
+  padding: 0 1rem;
+  border-radius: 999px;
+  background: #3a4750;
+  color: #fff;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* =========================
+   LIST (ABSOLUTE CONTROL)
+========================= */
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* 🚨 HARD STOP: row CANNOT be tall */
+.project-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 58px !important;
+  min-height: 58px !important;
+  max-height: 58px !important;
+
+  padding: 0 12px;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Kill ANY inherited padding/margins */
+.project-card * {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+/* Left side */
+.project-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-meta {
+  font-size: 0.7rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+/* Right side */
+.project-price {
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+   (Desktop untouched)
+========================= */
+
+@media (max-width: 640px) {
+  .projects-header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "search search"
+      "sort add";
+    gap: 0.5rem;
+  }
+
+  .projects-search {
+    grid-area: search;
+    width: 100%;
+  }
+
+  .projects-sort {
+    grid-area: sort;
+    width: 100%; /* shrink sort, give space to search */
+    font-size: 0.75rem;
+  }
+
+  .projects-add-button {
+    grid-area: add;
+    justify-self: end;
+  }
+}
+

@@ -1,0 +1,406 @@
+/* ============================================
+   C-BANK MODULE STYLING (MATCHING cbank/MDB)
+   ============================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------------
+   PAGE WRAPPER (like .cbank-page)
+---------------------------- */
+.cbank-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem; /* space under navbar + bottom breathing room */
+  box-sizing: border-box;
+}
+
+/* Back row + button (reuse same style as cbank/MDB) */
+.cbank-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.back-button {
+  background: transparent !important;
+  border: none;
+  padding: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.back-button:hover {
+  background: transparent !important;
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ---------------------------
+   MAIN FORM CONTAINER
+---------------------------- */
+#cbankForm {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem 2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+#cbankForm:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------
+   HEADINGS
+---------------------------- */
+#cbankForm h1 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+
+#cbankForm h3 {
+  margin-top: 2rem;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+  border-left: 4px solid var(--color-accent);
+  padding-left: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---------------------------
+   LABELS + INPUTS + SELECT
+---------------------------- */
+label {
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+  display: block;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1.5px solid var(--color-secondary);
+  border-radius: 8px;
+  background-color: #fff;
+  color: var(--color-text);
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(168, 197, 218, 0.3);
+}
+
+/* ---------------------------
+   2-COLUMN GRID SECTIONS
+---------------------------- */
+.section.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+  margin-bottom: 20px;
+}
+
+.section.step-grid,
+.section.reactor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 30px;
+  margin: 8px 0 20px 0;
+}
+
+/* ---------------------------
+   SINGLE COLUMN SECTION
+---------------------------- */
+.section.single-column > div {
+  margin-bottom: 14px;
+}
+
+/* ---------------------------
+   RADIO ROW
+---------------------------- */
+.radio-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 16px;
+}
+
+.radio-row label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+/* ---------------------------
+   BUTTONS (scoped so navbar buttons aren't affected)
+---------------------------- */
+#cbankForm button {
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 12px;
+}
+
+
+
+/* ---------------------------
+   OUTPUT AREA (match cbank/MDB)
+---------------------------- */
+.output {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  max-width: 100%;
+  overflow-x: hidden; /* prevent horizontal page scroll */
+}
+
+.output table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.output th,
+.output td {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.output th {
+  background: var(--color-accent);
+  color: var(--button-text-dark);
+  text-align: left;
+}
+
+/* =========================================================
+   CBANK MODULE TOOLBAR — RESPONSIVE + DESKTOP SAFE
+   DO NOT TOUCH FORM / SECTION / MODAL STYLES
+   ========================================================= */
+
+/* Toolbar container */
+.cbank-module-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+}
+
+/* Left side */
+.cbank-module-toolbar-left {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Title group */
+.cbank-module-title {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+  padding: 0.4rem 0.6rem !important;
+  border-radius: 8px;
+  background: #ffffff;
+
+  /* 🔑 responsive safety (does NOT affect desktop) */
+  flex: 1;
+  min-width: 0;
+}
+
+/* Title input */
+.cbank-module-title input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.3rem 0.4rem !important;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+}
+
+.cbank-module-title input:focus {
+  outline: none;
+  border-color: #a8c5da;
+  box-shadow: 0 0 0 1px rgba(168, 197, 218, 0.6);
+}
+
+/* Quantity group */
+.cbank-module-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.cbank-module-qty input {
+  width: 70px !important;
+  padding: 0.3rem 0.4rem !important;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+}
+
+/* Right side buttons */
+.cbank-module-toolbar-right {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Delete button */
+.cbank-delete-button {
+  border-radius: 8px;
+  border: 1px solid #ef4444;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Save button */
+.cbank-save-button {
+  border-radius: 8px;
+  border: 1px solid #16a34a;
+  background: #bbf7d0;
+  color: #166534;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cbank-save-button:hover {
+  background: #86efac;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS (≤ 640px)
+   Desktop remains untouched
+   ========================================================= */
+
+@media (max-width: 640px) {
+  .cbank-module-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .cbank-module-toolbar-left {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .cbank-module-qty {
+    justify-content: space-between;
+  }
+
+  .cbank-module-toolbar-right {
+    justify-content: space-between;
+  }
+
+  .cbank-module-toolbar-right button {
+    flex: 1;
+  }
+}
+
+/* ================================
+   Shared Module Action Buttons
+   (Generate / Reset / Download)
+================================ */
+
+/* Row for Generate + Reset */
+.module-action-row {
+  display: flex;
+  justify-content: center;   /* ✅ center buttons */
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+/* Row for Download Excel */
+.module-download-row {
+  display: flex;
+  justify-content: center;   /* ✅ center download button */
+  margin: 1rem 0 0;
+}
+
+/* Base button style */
+.module-btn {
+  height: 38px;
+  padding: 0 1.5rem;
+  border-radius: 8px;     /* pill shape */
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.module-btn:hover {
+  opacity: 0.9;
+}
+
+/* Force shared module button colors inside CBANK form */
+
+#cbankForm .module-btn-primary {
+  background: #3a4750;
+  color: #ffffff;
+}
+
+#cbankForm .module-btn-secondary {
+  background: #9fc5df;
+  color: #0f172a;
+}
+
+#cbankForm .module-btn-download {
+  background: #9fc5df;  
+  color: #0f172a;
+}
+
+
+#cbankForm .section {
+  padding: 0.5rem !important;
+}

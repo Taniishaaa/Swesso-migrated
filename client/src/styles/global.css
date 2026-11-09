@@ -1,0 +1,44 @@
+:root {
+  --color-primary: #3a4750;
+  --color-secondary: #6c7a89;
+  --color-accent: #a8c5d9;
+  --color-background: #f5f7f9;
+  --color-text: #1e1e1e;
+  --button-bg-dark: var(--color-primary);
+  --button-text-light: #ffffff;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Helvetica Neue", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5em 0;
+  color: var(--color-primary);
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+}

@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Page wrapper ===== */
+.mdb-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  box-sizing: border-box;
+}
+
+/* ===== Form Card ===== */
+#MDBForm {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+#MDBForm:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Headings ===== */
+.mdb-container > h2 {
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Labels & Inputs ===== */
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: var(--color-primary);
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid var(--color-secondary);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  color: var(--color-text);
+}
+
+input:focus,
+select:focus {
+  border-color: var(--color-accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(168, 197, 218, 0.3);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ===== Toolbar ===== */
+.mdb-module-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 0.75rem;
+}
+
+.mdb-module-toolbar-left {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mdb-module-title {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  background: #fff;
+  flex: 1;
+  min-width: 0;
+}
+
+.mdb-module-title input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.3rem 0.4rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+}
+
+.mdb-module-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.mdb-module-qty input {
+  width: 70px;
+  padding: 0.3rem 0.4rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.85rem;
+}
+
+.mdb-module-toolbar-right {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.mdb-delete-button {
+  border-radius: 8px;
+  border: 1px solid #ef4444;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.mdb-save-button {
+  border-radius: 8px;
+  border: 1px solid #16a34a;
+  background: #bbf7d0;
+  color: #166534;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.mdb-save-button:hover {
+  background: #86efac;
+}
+
+/* ===== Top two-col selects ===== */
+.mdb-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 1rem;
+}
+
+/* ===== Action buttons ===== */
+.mdb-container .module-action-row,
+.mdb-container .module-download-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.mdb-container .module-btn {
+  height: 38px;
+  padding: 0 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mdb-container .module-btn-primary {
+  background: #3a4750;
+  color: #fff;
+}
+
+.mdb-container .module-btn-secondary,
+.mdb-container .module-btn-download {
+  background: #9fc5df;
+  color: #0f172a;
+}
+
+/* ===== Output ===== */
+.mdb-output-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 640px) {
+  .mdb-module-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mdb-module-toolbar-left {
+    flex-direction: column;
+  }
+
+  .mdb-module-toolbar-right {
+    justify-content: space-between;
+  }
+
+  .mdb-module-toolbar-right button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  #MDBForm {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .mdb-container {
+    padding: 1rem 0.75rem 2rem;
+  }
+}
+
+/* ===============================
+   RESTORE: Report / Output Styling
+   (Generated Report table)
+================================ */
+
+.mdb-output-scroll {
+  width: 100%;
+}
+
+.mdb-output-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.mdb-output-scroll th,
+.mdb-output-scroll td {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+
+.mdb-output-scroll th {
+  background: var(--color-accent);
+  color: var(--button-text-dark);
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Mobile stacking for report rows */
+@media (max-width: 768px) {
+  .mdb-output-scroll table,
+  .mdb-output-scroll tbody,
+  .mdb-output-scroll tr {
+    display: block;
+    width: 100%;
+  }
+
+  .mdb-output-scroll tr {
+    margin-bottom: 0.75rem;
+  }
+
+  .mdb-output-scroll th {
+    border-bottom: none;
+    padding-bottom: 4px;
+  }
+
+  .mdb-output-scroll td {
+    border-bottom: 1px solid #e0e0e0;
+    padding-top: 4px;
+  }
+}
+
+
+/* ============================
+   NEW: Form4-style MDB layout
+   ============================ */
+
+/* Breaker header row (column labels) */
+.breaker-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0 8px;
+  padding: 0 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+}
+
+.breaker-header span {
+  flex: 1;
+}
+
+.breaker-header .col-rating {
+  flex: 0 0 80px;
+}
+
+.breaker-header .col-qty {
+  flex: 0 0 60px;
+}
+
+.breaker-header .col-type,
+.breaker-header .col-scc,
+.breaker-header .col-pole {
+  min-width: 70px;
+  text-align: left;
+}
+
+/* Core breaker row (single horizontal row) */
+.breaker-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.breaker-row label {
+  flex: 0 0 80px;
+  margin: 0;
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.breaker-row input[type="number"] {
+  width: 60px;
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+.breaker-row select {
+  min-width: 70px;
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+/* Two-column grid used for bus, outgoing, accessories */
+.form4-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  margin-bottom: 1rem;
+}
+
+.form4-grid .breaker-row {
+  margin-bottom: 0;
+}
+
+/* Stack grid on smaller screens */
+@media (max-width: 768px) {
+  .form4-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hide breaker headers on very small screens */
+@media (max-width: 480px) {
+  .breaker-header {
+    display: none;
+  }
+
+  .breaker-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .breaker-row label {
+    flex: unset;
+  }
+}
+

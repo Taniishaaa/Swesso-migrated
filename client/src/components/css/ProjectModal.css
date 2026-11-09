@@ -1,0 +1,125 @@
+/* =========================
+   MODAL (ADD PROJECT)
+========================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+  animation: modalFadeIn 0.2s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.modal-close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.modal-error {
+  margin-bottom: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background-color: #ffe5e5;
+  color: #b91c1c;
+  font-size: 0.85rem;
+}
+
+/* Form */
+.modal-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.modal-field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.modal-field label {
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.modal-field input,
+.modal-field textarea {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+.modal-field textarea {
+  resize: vertical;
+}
+
+/* Actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.modal-cancel-button {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.modal-submit-button {
+  padding: 0.45rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #3a4750;
+  color: #f5f7f9;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-submit-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

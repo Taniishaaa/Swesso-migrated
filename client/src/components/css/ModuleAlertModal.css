@@ -1,0 +1,63 @@
+/* Backdrop */
+.module-alert-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45); /* dark soft overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.module-alert-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  width: 90%;
+  max-width: 360px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: alert-pop 0.2s ease-out;
+}
+
+/* Message */
+.module-alert-modal p {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  color: #1f2937; /* dark gray */
+  line-height: 1.4;
+}
+
+/* OK button */
+.module-alert-modal button {
+  background: var(--color-primary, #3a4750);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.45rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.module-alert-modal button:hover {
+  background: #2b353e;
+}
+
+.module-alert-modal button:active {
+  transform: scale(0.97);
+}
+
+/* Small pop animation */
+@keyframes alert-pop {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

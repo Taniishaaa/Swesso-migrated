@@ -67,7 +67,7 @@ export function generateCBank800(req: GenerateCBank800Request): Promise<ProjectM
 export interface DBRowFormInput {
   brand: string;
   sccRating: string;
-  /** iso*/elcb*/mcb*/con* quantities, poles, ELR, timers, c_others (all strings). */
+  /** iso , elcb , mcb, con quantities, poles, ELR, timers, c_others (all strings). */
   counts: Record<string, string>;
   labour16: number;
   labour24: number;
@@ -93,7 +93,7 @@ export function generateDBRow(req: GenerateDBRowRequest): Promise<ProjectModuleR
 export interface SMDBFormInput {
   brand: string;
   currentBreakerType: string;
-  /** iso*/mccb*/out_mccb* quantities + SCC, accessories, padlock and cost-modal fields (all strings). */
+  /** iso, mccb, out_mccb, quantities + SCC, accessories, padlock and cost-modal fields (all strings). */
   values: Record<string, string>;
 }
 
